@@ -1,0 +1,21 @@
+{
+  "name": "cam",
+  "version": "1.0.0",
+  "description": "camera styled with css",
+  "default": "index.js",
+  "scripts": {
+    "start": "parcel camera.html",
+    "build": "parcel build camera.html"
+  },
+  "author": "Zeliha Akin",
+  "license": "ISC",
+  "dependencies": {
+    "core.js": "^0.4.2",
+    "regenerator-runtime": "^0.14.1"
+  },
+  "devDependencies": {
+    "cssnano": "^7.0.6",
+    "parcel": "^2.12.0",
+    "postcss": "^8.4.47"
+  }
+}

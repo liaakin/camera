@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!DOCTYPE html>
+    <html lang="en">
+        <script src="index.js"></script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Camera</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 0.6em;
+            color:rgb(233, 165, 165,1.4);
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            letter-spacing: 1px;
+            font-style: italic;
+            flex-direction: column;
+           
+           
+        }
+        body p {position: relative;
+            top: 250px;
+        }
+
+        .camframe {
+            width: 400px;
+            height: 280px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            position: relative;
+            border: 1px solid rgb(168, 157, 133);
+            border-radius: 20px;
+            top: 200px;
+            background: rgb(234, 235, 221);
+            background: linear-gradient(90deg, rgb(158, 161, 131) 18%, rgb(184, 174, 147) 51%, rgb(173, 162, 143) 82%);
+
+        }
+
+        .camknopf {
+            width: 100px;
+            height: 27px;
+            border: 1px solid rgb(221, 208, 208);
+            position: relative;
+            top: -30px;
+            left: 10px;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+            background: rgb(234, 235, 221);
+            background: linear-gradient(90deg, rgb(127, 128, 120) 18%, rgb(216, 213, 205) 51%, rgb(141, 132, 121) 82%);
+        }
+
+        .cam {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border: 1px solid rgb(141, 125, 104);
+            padding-right: 30px;
+            padding-left: 30px;
+            background: rgb(234, 235, 221);
+            background: linear-gradient(90deg, rgb(151, 136, 104) 18%, rgb(114, 108, 88) 51%, rgb(128, 112, 91) 82%);
+        }
+
+        .camhead {
+            width: 120px;
+            height: 76px;
+            border: 1px solid rgb(194, 179, 179);
+            position: relative;
+            top: -80px;
+            border-top-right-radius: 100px;
+            border-top-left-radius: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: rgb(234, 235, 221);
+            background: linear-gradient(90deg, rgb(177, 179, 149) 18%, rgba(199, 197, 191, 1) 51%, rgb(146, 142, 136) 82%);
+        }
+
+        .inside {
+            width: 80px;
+            height: 40px;
+            border: 1px solid rgb(148, 148, 148);
+            position: relative;
+            top: 5px;
+
+        }
+
+        .camframe:hover .inside {
+            background-color: rgb(255, 255, 254);
+        }
+
+        .insides {
+            width: 80;
+            height: 1px;
+            border: 3px solid rgb(255, 255, 255);
+            margin-bottom: 2.5px;
+
+        }
+
+        .insides:first-child {
+            margin-top: 2.5px;
+        }
+
+        .camlens {
+            width: 190px;
+            height: 190px;
+            border: 5px solid rgb(26, 25, 25);
+            border-radius: 100px;
+            position: absolute;
+            top: 55px;
+            background: rgb(48, 47, 48);
+            background: linear-gradient(142deg, rgb(133, 129, 133) 0%, rgba(0, 0, 0, 1) 56%);
+            opacity: 1;
+            transition: opacity 2s linear;
+
+        }
+
+        .camframe:hover .camlens {
+            background: linear-gradient(142deg, rgba(0, 0, 0, 1) 47%, rgba(255, 239, 255, 1) 100%, rgba(255, 239, 255, 1) 100%);
+            opacity: 0.9;
+        }
+
+        .camshot {
+            width: 40px;
+            height: 40px;
+            border: 2px solid rgb(221, 214, 214);
+            border-radius: 100px;
+            position: relative;
+            top: 30px;
+            background: rgb(158, 151, 151);
+            background: radial-gradient(circle, rgb(105, 104, 86) 0%, rgb(224, 211, 211) 100%);
+            opacity: 1;
+            transition: opacity 0.5s linear;
+        }
+
+        .camframe:hover .camshot {
+            opacity: 0.7;
+            background: radial-gradient(circle, rgb(36, 35, 31) 0%, rgb(151, 145, 145) 100%);
+        }
+
+        .flash {
+            position: absolute;
+            top: -100px;
+            left: 260px;
+            width: 60px;
+            height: 50px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            display: none;
+            
+        }
+        .camframe:hover .flash {display: flex;}
+
+        .fl {
+            height: 50px;
+            border: 1px double rgb(88, 85, 77);
+            border-top-left-radius: 100px;
+            border-bottom-right-radius: 100px;
+        }
+
+        .eins {
+            height: 25px;
+            rotate: 30deg;
+            position: relative;
+            right: 10px;
+            bottom: 10px;
+        }
+
+        .zwei {
+            height: 50px;
+            rotate: 50deg;
+            position: relative;
+            bottom: 10px;
+            left: 10px;
+        }
+
+        .drei {
+            height: 40px;
+            rotate: 80deg;
+            position: relative;
+            top: 30px;
+            left: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="camframe">
+        <div class="flash">
+            <div class="fl eins"></div>
+            <div class="fl zwei"></div>
+            <div class="fl drei"></div>
+        </div>
+        <div class="camknopf">
+        </div>
+        <div class="cam">
+            <div class="camhead">
+                <div class="inside">
+                    <div class="insides"></div>
+                    <div class="insides"></div>
+                    <div class="insides"></div>
+                    <div class="insides"></div>
+                </div>
+            </div>
+
+            <div class="camlens"></div>
+        </div>
+        <div class="camshot"></div>
+
+    </div>
+
+<p> © Copyright by ZelihaAkin</p>
+
+</body>
+
+</html>
